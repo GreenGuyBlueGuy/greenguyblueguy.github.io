@@ -27,53 +27,46 @@ nav a {
     margin: 0 1em;
 }
 
-.carousel-container {
-    width: 50%;
+section {
+    max-width: 1000px;
+    /* Adjust the max-width as per your preference */
     margin: 0 auto;
-    overflow: hidden;
+    /* Center the content */
+    padding: 1em;
 }
 
-.carousel {
-    display: flex;
-    /* Use flexbox for layout */
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-    display: flex;
-    /* Allow items to use flexbox properties */
-    justify-content: center;
-    /* Center content along the main axis (horizontal) */
-    align-items: center;
-    /* Center content along the cross-axis (vertical) */
-    flex: 0 0 100%;
-    /* Ensures each item takes full width */
-    box-sizing: border-box;
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: center;
+    bottom: 0;
+    width: 100%;
 }
 
 #mainImage {
     border-radius: 25px;
-    width: 100%;
-    /* Fills the carousel item container */
 }
 
 #icon {
     border-radius: 50%;
 }
 
-
+/* Add some basic styling for the grid */
 .featured-games-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
-
+/* Style for individual featured games */
 .featured-game-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid #ccc;
+    /* Add border for better visualization */
     padding: 20px;
 }
 
@@ -88,6 +81,8 @@ nav a {
 .featured-game-description img {
     display: block;
     margin: 0 auto;
+    /* width: 100%;
+    /* Make sure images don't exceed their container width */
 }
 
 hr.solid {
@@ -96,37 +91,47 @@ hr.solid {
 
 .robloxGameContainer {
     display: flex;
-    /* Allow flexbox for child elements */
+    justify-content: space-between;
+    margin-bottom: 20px;
     flex-wrap: wrap;
-    /* Allow items to wrap onto multiple lines */
+    /* Allow items to wrap to the next line */
 }
 
 .robloxGameImage {
-    flex: 0 0 33.33%;
-    /* Each image takes 1/3rd of container width */
-    margin: 10px;
-    /* Add some margin for spacing */
+    width: 30%;
+    /* Adjust the width as needed */
     text-align: center;
-    /* Ensures centering works */
-    display: flex;
-    /* Allow centering using justify-content */
-    justify-content: center;
-    /* Center image horizontally within container */
-    align-items: center;
-    /* Center image vertically within container (optional) */
+    /* Center content within each featuredGameImage */
 }
 
+.robloxGameImage h3 {
+    margin-top: 10px;
+    /* Adjust the margin as needed */
+}
+
+.robloxGameImage img {
+    max-width: 100%;
+    /* Ensure images don't exceed their container */
+    border-radius: 10px;
+    /* Apply border-radius to images */
+}
+
+/* Add some basic styling for the grid */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
+/* Style for individual team members */
 .team-member {
     border: 1px solid #ccc;
     padding: 20px;
     text-align: center;
 }
+
+
+
 
 .contact-form {
     max-width: 600px;
@@ -169,13 +174,35 @@ button:hover {
     background-color: #45a049;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
+
+
+
+.carousel-container {
+    width: 80%;
+    /* Adjust the width as needed */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.meet-our-heroes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.hero-card {
+    border: 1px solid #ccc;
+    padding: 20px;
     text-align: center;
-    padding: 1em;
-    position: fixed;
-    /* Fixed position to ensure it's always at the bottom */
-    bottom: 0;
-    width: 100%;
 }
