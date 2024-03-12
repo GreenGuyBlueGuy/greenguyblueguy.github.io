@@ -52,8 +52,9 @@ nav a {
 }
 
 #mainImage {
-    border-radius: 25px;
-    width: 100%;
+    border-radius: 20px;
+    width: 99%;
+    max-height: 400px;
     /* Fills the carousel item container */
 }
 
@@ -178,4 +179,18 @@ footer {
     /* Fixed position to ensure it's always at the bottom */
     bottom: 0;
     width: 100%;
+}
+
+#mc_embed_signup {
+    margin: 0 auto;
+    /* Centers the form horizontally */
+    width: 50%;
+    /* Sets the form width to 50% */
+}
+
+.signup-container {
+    min-width: 300px;
+    /* Sets minimum width for mobile browsers */
+    margin: 0 auto;
+    /* Centers the container horizontally */
 }
