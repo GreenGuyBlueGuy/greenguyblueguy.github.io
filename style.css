@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     color: #00072d;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     background-color: #f4f4f4;
 }
@@ -10,6 +10,7 @@ header {
     background-color: #333;
     color: #fff;
     text-align: center;
+    width: 100%;
     padding: 1em;
 }
 
@@ -17,6 +18,7 @@ nav {
     background-color: #444;
     color: #fff;
     text-align: center;
+    width: 100%;
     padding: 0.5em;
 }
 
@@ -25,6 +27,13 @@ nav a {
     text-decoration: none;
     padding: 1em;
     margin: 0 1em;
+}
+
+#content {
+    margin: 0 auto;
+    /* Centers the content horizontally */
+    max-width: 90%;
+    /* Optional: Sets a maximum width for the content */
 }
 
 .carousel-container {
@@ -61,6 +70,7 @@ nav a {
 #icon {
     border-radius: 50%;
 }
+
 
 
 .featured-games-grid {

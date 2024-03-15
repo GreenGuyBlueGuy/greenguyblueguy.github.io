@@ -130,6 +130,10 @@ hr.solid {
     text-align: center;
 }
 
+body {
+    margin: 0 10px;
+    /* Adds 10px margin on left and right sides */
+}
 
 
 
