@@ -63,8 +63,14 @@ nav a {
 #mainImage {
     border-radius: 10px;
     width: 90%;
-    /* max-height: 400px; */
+    max-height: 400px;
     /* Fills the carousel item container */
+}
+
+#mainImage2 {
+    border-radius: 10px;
+    width: 90%;
+    /* for games image grid */
 }
 
 #icon {
