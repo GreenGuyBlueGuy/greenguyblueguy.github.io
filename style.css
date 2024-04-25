@@ -62,8 +62,8 @@ nav a {
 
 #mainImage {
     border-radius: 10px;
-    width: 99%;
-    max-height: 400px;
+    width: 90%;
+    /* max-height: 400px; */
     /* Fills the carousel item container */
 }
 
@@ -84,7 +84,7 @@ nav a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     padding: 20px;
 }
 
