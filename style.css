@@ -14,7 +14,7 @@ header {
     padding: 1em;
 }
 
-nav {
+/* nav {
     background-color: #444;
     color: #fff;
     text-align: center;
@@ -27,7 +27,57 @@ nav a {
     text-decoration: none;
     padding: 1em;
     margin: 0 1em;
+} */
+
+/* Basic styling for the navigation bar */
+nav {
+    background-color: #333;
+    /* Background color */
+    overflow: hidden;
+    /* Clear floats */
+    text-align: center;
 }
+
+nav a {
+    display: inline-block;
+    /* Make the links inline-block elements */
+    color: white;
+    /* Text color */
+    text-align: center;
+    /* Center align text */
+    padding: 14px 10px;
+    /* Padding */
+    text-decoration: none;
+    /* Remove underline */
+    margin: 0 5px;
+    /* Add margin between links */
+}
+
+/* Style the links on hover */
+nav a:hover {
+    background-color: #ddd;
+    /* Background color on hover */
+    color: black;
+    /* Text color on hover */
+}
+
+/* Style the active link */
+nav .active {
+    background-color: #4CAF50;
+    /* Background color for active link */
+}
+
+/* Make the navigation bar more responsive */
+@media screen and (max-width: 600px) {
+    nav a {
+        padding: 14px 5px;
+        /* Reduce padding on smaller screens */
+        margin: 5px;
+        /* Reduce margin on smaller screens */
+    }
+}
+
+
 
 #content {
     margin: 0 auto;
