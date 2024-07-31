@@ -77,7 +77,18 @@ nav .active {
     }
 }
 
-
+/* Add padding around the embedded video */
+.embedded-video {
+    padding: 20px;
+    background-color: #f0f0f0;
+    /* Optional: add a background color for the padding area */
+    display: block;
+    /* Ensure the video takes up full width */
+    margin: 20px auto;
+    /* Center the video within its container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Optional: add a shadow for better appearance */
+}
 
 #content {
     margin: 0 auto;
