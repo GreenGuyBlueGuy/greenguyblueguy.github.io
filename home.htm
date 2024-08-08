@@ -46,7 +46,12 @@
                     <a href="/pages/games/taleofthe.htm"><img src="/images/TaleoftheStoryLegend-Logo.png"
                             alt="Tale of the Story Legend" id="mainImage"></a>
                 </div>
+
             </div>
+            <!-- <center> -->
+            <button class="carousel-arrow left-arrow">&#9664;</button>
+            <button class="carousel-arrow right-arrow">&#9654;</button>
+            <!-- </center> -->
         </div>
 
         <div id="content">
@@ -68,9 +73,70 @@
         </div>
     </div>
     <br>
-
-
     <script>
+        const carousel = document.querySelector('.carousel');
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
+        let currentIndex = 0;
+        let isSwiping = false;
+        let startX;
+
+        function showImage(index) {
+            const slideWidth = document.querySelector('.carousel-item').offsetWidth;
+            carousel.style.transform = `translateX(${-index * slideWidth}px)`;
+        }
+
+        function moveCarousel() {
+            currentIndex = (currentIndex + 1) % document.querySelectorAll('.carousel-item').length;
+            showImage(currentIndex);
+        }
+
+        // Automatically move the carousel every 3 seconds
+        const autoMove = setInterval(moveCarousel, 3000);
+
+        leftArrow.addEventListener('click', () => {
+            clearInterval(autoMove);
+            currentIndex = (currentIndex - 1 + document.querySelectorAll('.carousel-item').length) % document.querySelectorAll('.carousel-item').length;
+            showImage(currentIndex);
+        });
+
+        rightArrow.addEventListener('click', () => {
+            clearInterval(autoMove);
+            currentIndex = (currentIndex + 1) % document.querySelectorAll('.carousel-item').length;
+            showImage(currentIndex);
+        });
+
+        // Swipe functionality for mobile
+        carousel.addEventListener('touchstart', (e) => {
+            clearInterval(autoMove);
+            startX = e.touches[0].clientX;
+            isSwiping = true;
+        });
+
+        carousel.addEventListener('touchmove', (e) => {
+            if (!isSwiping) return;
+            const touchX = e.touches[0].clientX;
+            const diffX = startX - touchX;
+
+            if (diffX > 50) { // Swiped left
+                currentIndex = (currentIndex + 1) % document.querySelectorAll('.carousel-item').length;
+                showImage(currentIndex);
+                isSwiping = false;
+            } else if (diffX < -50) { // Swiped right
+                currentIndex = (currentIndex - 1 + document.querySelectorAll('.carousel-item').length) % document.querySelectorAll('.carousel-item').length;
+                showImage(currentIndex);
+                isSwiping = false;
+            }
+        });
+
+        carousel.addEventListener('touchend', () => {
+            isSwiping = false;
+        });
+
+
+    </script>
+
+    <!-- <script>
         // JavaScript code for carousel functionality
         const carousel = document.querySelector('.carousel');
         let currentIndex = 0;
@@ -87,7 +153,7 @@
 
         // Automatically move the carousel every 3 seconds
         setInterval(moveCarousel, 3000);
-    </script>
+    </script> -->
 </body>
 <footer>
     &copy; 2024 Green Guy Blue Guy. All rights reserved.
