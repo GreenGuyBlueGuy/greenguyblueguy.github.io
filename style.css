@@ -1,9 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
-    color: #00072d;
+    /* font-family: Arial, sans-serif; */
+    font-family: 'EarlyGameBoy', sans-serif;
+    /* font-size: 20px; */
+    color: #f7fdfd;
     margin: 0 auto;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #333;
+
 }
 
 header {
@@ -12,6 +15,30 @@ header {
     text-align: center;
     width: 100%;
     padding: 1em;
+}
+
+a {
+    color: #65edff;
+
+}
+
+hr {
+    color: #303030
+}
+
+@font-face {
+    font-family: 'SegaArcadeFont';
+    src: url('SegaArcadeFont-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SuperMarioWorldTextBox';
+    src: url('SuperMarioWorldTextBox.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'EarlyGameBoy';
+    src: url('EarlyGameBoy.ttf') format('truetype');
 }
 
 /* nav {
@@ -31,11 +58,14 @@ nav a {
 
 /* Basic styling for the navigation bar */
 nav {
-    background-color: #333;
+    background-color: #131313;
     /* Background color */
     overflow: hidden;
     /* Clear floats */
     text-align: center;
+    width: 100%;
+    font-family: 'SegaArcadeFont', sans-serif;
+    font-size: 24px;
 }
 
 nav a {
