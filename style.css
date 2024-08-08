@@ -153,8 +153,8 @@ nav .active {
 
 #mainImage {
     border-radius: 10px;
-    width: 99%;
-    max-height: 400px;
+    width: 80%;
+    max-height: 500px;
     /* Fills the carousel item container */
 }
 
@@ -281,7 +281,7 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 1em;
+    /* padding: 1em; */
     /* position: fixed; */
     /* Fixed position to ensure it's always at the bottom */
     bottom: 0;
