@@ -58,20 +58,6 @@ a {
     right: 10px;
 }
 
-/* nav {
-    background-color: #444;
-    color: #fff;
-    text-align: center;
-    width: 100%;
-    padding: 0.5em;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 1em;
-    margin: 0 1em;
-} */
 
 /* Basic styling for the navigation bar */
 nav {
@@ -181,11 +167,37 @@ nav .active {
     /* for games image grid */
 }
 
+#mainImage3 {
+    border-radius: 10px;
+    width: 60%;
+    max-height: 500px;
+    /* Fills the carousel item container */
+}
+
 #icon {
     border-radius: 50%;
 }
 
-
+.join-button {
+    background-color: #4CAF50;
+    /* Green background */
+    color: white;
+    /* White text */
+    padding: 10px 20px;
+    /* Some padding */
+    text-align: center;
+    /* Center text */
+    text-decoration: none;
+    /* No underline */
+    display: inline-block;
+    /* Inline-block layout */
+    font-size: 16px;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    border-radius: 5px;
+    /* Rounded corners */
+}
 
 .featured-games-grid {
     display: grid;
