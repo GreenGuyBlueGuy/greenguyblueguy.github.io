@@ -58,92 +58,100 @@
         <hr style="border-color: rgb(0, 0, 0);">
         <br>
         <center>
-            <h2>Join the Mailing List!</h2>
-            <a href="/pages/signupform.htm" class="join-button">Join</a>
+            <h2>Snakes with Fists is on Steam!</h2>
+            <a href="https://store.steampowered.com/app/3286250/Snakes_with_Fists/" class="join-button">steam page</a>
         </center>
         <div id="content">
             <br>
-            </nav>
-            <center>
-                <!-- <h1>Green Guy Blue Guy</h1> -->
-                <hr style="border-color: rgb(0, 0, 0);">
-                <br>
-                <h2>PLAY FLOATY FLUFF RIGHT MEOW!</h2>
-                <img src="/images/FFcandy.png" width="25%" />
-                <br>
-                <a href="https://play.google.com/store/apps/details?id=com.floaty.fluff&pcampaignid=web_share"><img
-                        src="/images/google-play-badge.png" width="35%"></a>
-                <a href="https://apps.apple.com/us/app/floaty-fluff/id6479543596 "><img src="/images/Apple.png"
-                        width="33%"></a>
-            </center>
+            <hr style="border-color: rgb(0, 0, 0);">
             <br>
+            <center>
+                <h2>Join the Mailing List!</h2>
+                <a href="/pages/signupform.htm" class="join-button">Join</a>
+            </center>
+            <div id="content">
+                <br>
+                </nav>
+                <center>
+                    <!-- <h1>Green Guy Blue Guy</h1> -->
+                    <hr style="border-color: rgb(0, 0, 0);">
+                    <br>
+                    <h2>PLAY FLOATY FLUFF RIGHT MEOW!</h2>
+                    <img src="/images/FFcandy.png" width="25%" />
+                    <br>
+                    <a href="https://play.google.com/store/apps/details?id=com.floaty.fluff&pcampaignid=web_share"><img
+                            src="/images/google-play-badge.png" width="35%"></a>
+                    <a href="https://apps.apple.com/us/app/floaty-fluff/id6479543596 "><img src="/images/Apple.png"
+                            width="33%"></a>
+                </center>
+                <br>
+            </div>
         </div>
-    </div>
-    <br>
-    <script>
-        const carousel = document.querySelector('.carousel');
-        const leftArrow = document.querySelector('.left-arrow');
-        const rightArrow = document.querySelector('.right-arrow');
-        let currentIndex = 0;
-        let isSwiping = false;
-        let startX;
+        <br>
+        <script>
+            const carousel = document.querySelector('.carousel');
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+            let currentIndex = 0;
+            let isSwiping = false;
+            let startX;
 
-        function showImage(index) {
-            const slideWidth = document.querySelector('.carousel-item').offsetWidth;
-            carousel.style.transform = `translateX(${-index * slideWidth}px)`;
-        }
+            function showImage(index) {
+                const slideWidth = document.querySelector('.carousel-item').offsetWidth;
+                carousel.style.transform = `translateX(${-index * slideWidth}px)`;
+            }
 
-        function moveCarousel() {
-            currentIndex = (currentIndex + 1) % document.querySelectorAll('.carousel-item').length;
-            showImage(currentIndex);
-        }
-
-        // Automatically move the carousel every 3 seconds
-        const autoMove = setInterval(moveCarousel, 3000);
-
-        leftArrow.addEventListener('click', () => {
-            clearInterval(autoMove);
-            currentIndex = (currentIndex - 1 + document.querySelectorAll('.carousel-item').length) % document.querySelectorAll('.carousel-item').length;
-            showImage(currentIndex);
-        });
-
-        rightArrow.addEventListener('click', () => {
-            clearInterval(autoMove);
-            currentIndex = (currentIndex + 1) % document.querySelectorAll('.carousel-item').length;
-            showImage(currentIndex);
-        });
-
-        // Swipe functionality for mobile
-        carousel.addEventListener('touchstart', (e) => {
-            clearInterval(autoMove);
-            startX = e.touches[0].clientX;
-            isSwiping = true;
-        });
-
-        carousel.addEventListener('touchmove', (e) => {
-            if (!isSwiping) return;
-            const touchX = e.touches[0].clientX;
-            const diffX = startX - touchX;
-
-            if (diffX > 50) { // Swiped left
+            function moveCarousel() {
                 currentIndex = (currentIndex + 1) % document.querySelectorAll('.carousel-item').length;
                 showImage(currentIndex);
-                isSwiping = false;
-            } else if (diffX < -50) { // Swiped right
+            }
+
+            // Automatically move the carousel every 3 seconds
+            const autoMove = setInterval(moveCarousel, 3000);
+
+            leftArrow.addEventListener('click', () => {
+                clearInterval(autoMove);
                 currentIndex = (currentIndex - 1 + document.querySelectorAll('.carousel-item').length) % document.querySelectorAll('.carousel-item').length;
                 showImage(currentIndex);
+            });
+
+            rightArrow.addEventListener('click', () => {
+                clearInterval(autoMove);
+                currentIndex = (currentIndex + 1) % document.querySelectorAll('.carousel-item').length;
+                showImage(currentIndex);
+            });
+
+            // Swipe functionality for mobile
+            carousel.addEventListener('touchstart', (e) => {
+                clearInterval(autoMove);
+                startX = e.touches[0].clientX;
+                isSwiping = true;
+            });
+
+            carousel.addEventListener('touchmove', (e) => {
+                if (!isSwiping) return;
+                const touchX = e.touches[0].clientX;
+                const diffX = startX - touchX;
+
+                if (diffX > 50) { // Swiped left
+                    currentIndex = (currentIndex + 1) % document.querySelectorAll('.carousel-item').length;
+                    showImage(currentIndex);
+                    isSwiping = false;
+                } else if (diffX < -50) { // Swiped right
+                    currentIndex = (currentIndex - 1 + document.querySelectorAll('.carousel-item').length) % document.querySelectorAll('.carousel-item').length;
+                    showImage(currentIndex);
+                    isSwiping = false;
+                }
+            });
+
+            carousel.addEventListener('touchend', () => {
                 isSwiping = false;
-            }
-        });
-
-        carousel.addEventListener('touchend', () => {
-            isSwiping = false;
-        });
+            });
 
 
-    </script>
+        </script>
 
-    <!-- <script>
+        <!-- <script>
         // JavaScript code for carousel functionality
         const carousel = document.querySelector('.carousel');
         let currentIndex = 0;
