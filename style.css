@@ -30,12 +30,12 @@ a {
 
 @font-face {
     font-family: 'SuperMarioWorldTextBox';
-    src: url('SuperMarioWorldTextBox.ttf') format('truetype');
+    src: url('DePixelHalbfett.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'EarlyGameBoy';
-    src: url('EarlyGameBoy.ttf') format('truetype');
+    src: url('DePixelHalbfett.ttf') format('truetype');
 }
 
 .carousel-arrow {
