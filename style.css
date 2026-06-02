@@ -103,12 +103,12 @@ nav {
     /* font-family: var(--font-main); */
     font-family: 'SegaArcadeFont', sans-serif;
     font-size: 20px;
-    padding: var(--space-3);
+    padding: var(--space-2);
 }
 
 nav a {
     display: inline-block;
-    padding: 10px 14px;
+    padding: 8px 8px;
     margin: 0 4px;
     color: var(--text);
     border-radius: var(--radius-sm);
