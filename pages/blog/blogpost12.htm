@@ -1,0 +1,355 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Godot Respected by Game Studios? A Solo Developer's Perspevtive</title>
+    <meta name="description"
+        content="A solo game developer shares real-world experience using Godot Engine in game jams, mobile releases, and commercial game development, and evaluates its industry reputation and capabilities.">
+
+    <meta name="keywords"
+        content="Godot Engine, game development, indie game engine, Unity vs Godot, GameMaker vs Godot, game studio tools, Godot 4 review">
+    <meta name="author" content="Game Developer Perspective">
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Is Godot Respected by Game Studios?">
+
+    <meta property="og:description"
+        content="A practical, real-world perspective on Godot Engine from an indie solo developer shipping games on mobile and PC.">
+
+    <meta property="og:type" content="article">
+
+    <!-- Basic Article Schema -->
+
+    <script type="application/ld+json">
+
+  {
+
+    "@context": "https://schema.org",
+
+    "@type": "Article",
+
+    "headline": "Is Godot Respected by Game Studios? A Solo Developer’s Perspective",
+
+    "description": "A solo developer evaluates Godot Engine’s real-world adoption, strengths, weaknesses, and industry perception.",
+
+    "author": {
+
+      "@type": "Person",
+
+      "name": "Solo Game Developer"
+
+    }
+
+  }
+
+  </script>
+
+    <style>
+        body {
+
+            /* font-family: Arial, sans-serif; */
+            font-family: "IBM Plex Sans", Arial, sans-serif;
+
+            line-height: 1.6;
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 20px;
+
+            color: #ebebeb;
+
+        }
+
+        h1,
+        h2,
+        h3 {
+
+            line-height: 1.3;
+
+        }
+
+        h1 {
+
+            font-size: 2em;
+
+            margin-bottom: 0.2em;
+
+        }
+
+        .meta {
+
+            color: #ebebeb;
+
+            font-size: 0.9em;
+
+            margin-bottom: 2em;
+
+        }
+
+        blockquote {
+
+            border-left: 4px solid #ccc;
+
+            padding-left: 15px;
+
+            color: #d6d5d5;
+
+            margin-left: 0;
+
+        }
+    </style>
+    <!-- <style>
+        .container {
+            max-width: 800px;
+            /* Adjust the maximum width as needed */
+            margin: 0 auto;
+            /* Center the container horizontally */
+            padding: 20px;
+            /* Add padding for spacing */
+        }
+
+        .content {
+            text-align: justify;
+            /* Justify the text for better readability */
+        }
+    </style> -->
+</head>
+
+<!-- <head>
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Guy Blue Guy - Blog</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .content {
+            text-align: justify;
+        }
+    </style>
+</head> -->
+
+<body>
+
+
+    <body>
+        <!-- <header> -->
+        <center><img src="/images/GreenGuyBlueGuyLogo.png" alt="Green Guy Blue Guy Logo" style="max-width: 400px;">
+        </center>
+        <!-- </header> -->
+        <h1>Is Godot Respected by Game Studios?</h1>
+
+        <p class="meta">A solo developer’s real-world perspective on using Godot in production</p>
+
+        <h2>Introduction</h2>
+
+        <p>
+
+            The Godot Engine has been gaining attention in recent years, but its reputation within professional game
+            development
+            circles is still debated.
+
+            From my perspective as a solo developer who has shipped games and participated in industry events, the
+            question
+            is less about whether Godot is “respected” and more about whether that perception matches reality.
+
+        </p>
+
+        <h2>My Background With Godot</h2>
+
+        <p>
+
+            I am a solo game developer who has used Godot for game jams, mobile game development, and my current project
+            <strong>Snakes with Fists</strong>. I’ve released a mobile game on both iOS and Android and have received
+            awards
+            for my demo at industry events. I am currently working in Godot 4 with plans to ship a full commercial
+            title.
+
+        </p>
+
+        <h2>Why I Chose Godot</h2>
+
+        <p>
+
+            Before settling on Godot, I experimented with GameMaker and Unity for 2D development. Unity initially seemed
+            powerful but raised concerns around licensing and complexity. GameMaker felt approachable but became
+            restrictive
+            over time.
+
+        </p>
+
+        <p>
+
+            Godot stood out as lightweight, flexible, and surprisingly complete. It also aligned with my preference for
+            free
+            and open-source tools. The addition of third-party console support solutions such as W4 further strengthened
+            my
+            confidence in the engine for commercial development.
+
+        </p>
+
+        <h2>Industry Perception vs Reality</h2>
+
+        <p>
+
+            At GDC 2024, very few developers I met were actively using Godot. Those who were curious generally
+            questioned
+            its quality, especially around physics systems. Most concerns felt speculative rather than experience-based,
+            though 3D physics was a commonly cited weak point.
+
+        </p>
+
+        <p>
+
+            By GDC 2025, the conversation had noticeably shifted. Following changes in Unity’s pricing model and
+            licensing
+            controversy, more studios began exploring alternatives, and Godot started appearing more frequently in
+            discussions.
+
+        </p>
+
+        <h2>What Surprised Me About Godot</h2>
+
+        <p>
+
+            One of the biggest surprises was how complete Godot feels as a development toolset:
+
+        </p>
+
+        <ul>
+
+            <li>Built-in tilemap systems</li>
+
+            <li>Strong animation tools and animation trees tied directly to game logic</li>
+
+            <li>GDScript, which is highly readable and easy to adopt</li>
+
+            <li>A growing ecosystem of tutorials and learning resources</li>
+
+        </ul>
+
+        <p>
+
+            These tools make it possible to move from idea to implementation very quickly, especially in 2D development.
+
+        </p>
+
+        <h2>Production Strengths</h2>
+
+        <p>
+
+            In practice, Godot has proven to be extremely effective for rapid iteration and development speed. Debugging
+            tools are solid, error reporting is clear, and the overall workflow is lightweight compared to heavier
+            engines.
+
+        </p>
+
+        <p>
+
+            The engine’s performance and low overhead make it easy to quickly test ideas without friction, which is
+            especially valuable for solo developers.
+
+        </p>
+
+        <h2>Where Godot Still Lags Behind</h2>
+
+        <p>
+
+            Godot is not without limitations. The most noticeable gaps are not in core functionality but in ecosystem
+            maturity:
+
+        </p>
+
+        <ul>
+
+            <li>Console publishing is still less direct, though third-party solutions exist</li>
+
+            <li>The asset store is smaller compared to Unity’s ecosystem</li>
+
+            <li>Some middleware integrations require more manual setup</li>
+
+        </ul>
+
+        <p>
+
+            However, these limitations are generally solvable and well-documented, rather than fundamental blockers.
+
+        </p>
+
+        <h2>When I Recommend Godot</h2>
+
+        <p>
+
+            From my experience, Godot is an excellent choice for:
+
+        </p>
+
+        <ul>
+
+            <li>2D games of almost any scope</li>
+
+            <li>Solo developers and small indie teams</li>
+
+            <li>Projects where budget and licensing freedom matter</li>
+
+        </ul>
+
+        <p>
+
+            For high-end 3D production or teams heavily invested in AAA pipelines, Unreal Engine may still be a better
+            fit.
+            Unity remains a strong option for larger teams with established workflows.
+
+        </p>
+
+        <h2>Open Source and Long-Term Confidence</h2>
+
+        <p>
+
+            One of the most important aspects of Godot is its open-source nature. For me, this provides long-term
+            confidence
+            that the engine will continue evolving independently of corporate licensing changes.
+
+        </p>
+
+        <p>
+
+            It is not just about cost savings—it is about trust in the sustainability of the tool.
+
+        </p>
+
+        <h2>Final Thoughts</h2>
+
+        <p>
+
+            Godot is still underrated in many professional circles, despite being capable of powering a wide range of
+            commercial indie games. In my experience, most indie projects seen at conventions or online marketplaces
+            could
+            be built effectively in Godot.
+
+        </p>
+
+        <p>
+
+            As adoption grows and tooling continues to improve, I expect its industry perception to shift further in the
+            coming years. It is already a highly capable engine—it just hasn’t fully caught up in reputation yet.
+
+        </p>
+
+    </body>
+
+</html>

@@ -1,0 +1,332 @@
+body {
+    /* font-family: Arial, sans-serif; */
+    font-family: 'EarlyGameBoy', sans-serif;
+    /* font-size: 20px; */
+    color: #f7fdfd;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #1a1919;
+
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 1em;
+}
+
+a {
+    color: #65edff;
+
+}
+
+
+@font-face {
+    font-family: 'SegaArcadeFont';
+    src: url('SegaArcadeFont-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SuperMarioWorldTextBox';
+    src: url('DePixelHalbfett.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'EarlyGameBoy';
+    src: url('DePixelHalbfett.ttf') format('truetype');
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+
+/* Basic styling for the navigation bar */
+nav {
+    background-color: #131313;
+    /* Background color */
+    overflow: hidden;
+    /* Clear floats */
+    text-align: center;
+    width: 100%;
+    font-family: 'SegaArcadeFont', sans-serif;
+    font-size: 24px;
+}
+
+nav a {
+    display: inline-block;
+    /* Make the links inline-block elements */
+    color: white;
+    /* Text color */
+    text-align: center;
+    /* Center align text */
+    padding: 14px 10px;
+    /* Padding */
+    text-decoration: none;
+    /* Remove underline */
+    margin: 0 5px;
+    /* Add margin between links */
+}
+
+/* Style the links on hover */
+nav a:hover {
+    background-color: #ddd;
+    /* Background color on hover */
+    color: black;
+    /* Text color on hover */
+}
+
+/* Style the active link */
+nav .active {
+    background-color: #4CAF50;
+    /* Background color for active link */
+}
+
+/* Make the navigation bar more responsive */
+@media screen and (max-width: 600px) {
+    nav a {
+        padding: 14px 5px;
+        /* Reduce padding on smaller screens */
+        margin: 5px;
+        /* Reduce margin on smaller screens */
+    }
+}
+
+/* Add padding around the embedded video */
+.embedded-video {
+    padding: 20px;
+    background-color: #f0f0f0;
+    /* Optional: add a background color for the padding area */
+    display: block;
+    /* Ensure the video takes up full width */
+    margin: 20px auto;
+    /* Center the video within its container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Optional: add a shadow for better appearance */
+}
+
+#content {
+    margin: 0 auto;
+    /* Centers the content horizontally */
+    max-width: 90%;
+    /* Optional: Sets a maximum width for the content */
+}
+
+.carousel-container {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    /* Use flexbox for layout */
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    display: flex;
+    /* Allow items to use flexbox properties */
+    justify-content: center;
+    /* Center content along the main axis (horizontal) */
+    align-items: center;
+    /* Center content along the cross-axis (vertical) */
+    flex: 0 0 100%;
+    /* Ensures each item takes full width */
+    box-sizing: border-box;
+}
+
+#mainImage {
+    border-radius: 10px;
+    width: 99%;
+    max-height: 500px;
+    /* Fills the carousel item container */
+}
+
+#mainImage2 {
+    border-radius: 10px;
+    width: 90%;
+    /* for games image grid */
+}
+
+#mainImage3 {
+    border-radius: 10px;
+    width: 60%;
+    max-height: 500px;
+    /* Fills the carousel item container */
+}
+
+#icon {
+    border-radius: 50%;
+}
+
+.join-button {
+    background-color: #4CAF50;
+    /* Green background */
+    color: white;
+    /* White text */
+    padding: 10px 20px;
+    /* Some padding */
+    text-align: center;
+    /* Center text */
+    text-decoration: none;
+    /* No underline */
+    display: inline-block;
+    /* Inline-block layout */
+    font-size: 16px;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    border-radius: 5px;
+    /* Rounded corners */
+}
+
+.featured-games-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+.featured-game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 1px solid #ccc; */
+    padding: 20px;
+}
+
+.featured-game-description h2 {
+    margin-top: 0;
+}
+
+.featured-game-description p {
+    margin-bottom: 10px;
+}
+
+.featured-game-description img {
+    display: block;
+    margin: 0 auto;
+}
+
+hr.solid {
+    border-top: 1px solid #303030;
+}
+
+.robloxGameContainer {
+    display: flex;
+    /* Allow flexbox for child elements */
+    flex-wrap: wrap;
+    /* Allow items to wrap onto multiple lines */
+}
+
+.robloxGameImage {
+    flex: 0 0 33.33%;
+    /* Each image takes 1/3rd of container width */
+    margin: 10px;
+    /* Add some margin for spacing */
+    text-align: center;
+    /* Ensures centering works */
+    display: flex;
+    /* Allow centering using justify-content */
+    justify-content: center;
+    /* Center image horizontally within container */
+    align-items: center;
+    /* Center image vertically within container (optional) */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.team-member {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    /* padding: 1em; */
+    /* position: fixed; */
+    /* Fixed position to ensure it's always at the bottom */
+    bottom: 0;
+    width: 100%;
+}
+
+#mc_embed_signup {
+    margin: 0 auto;
+    /* Centers the form horizontally */
+    width: 50%;
+    /* Sets the form width to 50% */
+}
+
+.signup-container {
+    min-width: 300px;
+    /* Sets minimum width for mobile browsers */
+    margin: 0 auto;
+    /* Centers the container horizontally */
+}
