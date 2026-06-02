@@ -265,6 +265,22 @@ button:hover,
 /* =========================
 SECTIONS
 ========================= */
+/* @media (max-width: 1024px) {
+    .featured-games-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-games-grid {
+        grid-template-columns: 1fr;
+    } */
+
+@media (max-width: 768px) {
+    .featured-games-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 .roblox-grid {
     display: grid;
@@ -273,19 +289,33 @@ SECTIONS
 
 .featured-games-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-content: center;
-    align-content: start;
-    max-width: 1000px;
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 24px;
+    align-items: stretch;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .featured-game-container {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+}
+
+.featured-game-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.featured-game-image img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .team-grid {
