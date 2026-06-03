@@ -3,6 +3,189 @@
 
 <head>
     <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I Chose a Small Flappy Bird Game for My First Video Game Project - Green Guy Blue Guy Blog</title>
+    <meta name="description"
+        content="An indie game developer breaks down the value of building a Minimum Viable Product (MVP), avoiding scope creep, and shipping an initial mobile title.">
+
+    <meta name="keywords"
+        content="indie game development, MVP, mobile game publishing, scope creep, Floaty Fluff, Godot Engine migration, Solar 2D, mobile app store release">
+    <meta name="author" content="Joe Little">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Why I Chose a Small Flappy Bird Game for My First Video Game Project">
+    <meta property="og:description"
+        content="Leading by example: How building a small, scoped title like Floaty Fluff laid down the foundational technical habits required to tackle massive indie pipelines.">
+    <meta property="og:type" content="article">
+
+    <!-- Basic Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Why I Chose a Small Flappy Bird Game for My First Video Game Project",
+      "description": "Joe Little shares insight on scoping mechanics down to a manageable size, fighting feature bloat, and learning to ship software to app stores.",
+      "author": {
+        "@type": "Person",
+        "name": "Joe Little"
+      },
+      "datePublished": "2024-05-19"
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: "IBM Plex Sans", Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            color: #ebebeb;
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 0.2em;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        .meta {
+            color: #b0b0b0;
+            font-size: 0.95em;
+            margin-bottom: 2.5em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1em;
+        }
+
+        p a {
+            color: #ff4757;
+            /* Matches custom anchor colors */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        p a:hover {
+            color: #ff6b81;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <img src="/images/GreenGuyBlueGuyLogo.png" alt="Green Guy Blue Guy Logo"
+            style="max-width: 400px; margin-bottom: 1.5rem;">
+    </center>
+
+    <h1>Why I Chose a Small Flappy Bird Game for My First Video Game Project</h1>
+    <div class="meta">By <strong>Joe Little</strong> &bull; May 19th, 2024</div>
+
+    <p>
+        I know, I know, it is almost comical at this point; there are so many Flappy Bird clones. However,
+        you must understand there are many good reasons behind choosing such a game project for my first
+        release. There are currently three rather large games that I have in my production pipeline. While
+        talking to my kids, I was telling them how important it is to just finish games. Make small games
+        and publish them. I remember saying, "You could even take a simple game like Flappy Bird and add a
+        new mechanic." This conversation opened the idea that I should live by example. That is how making
+        and releasing Floaty Fluff, my Flappy Bird-like game, began. This choice allowed me to focus on
+        creating a Minimum Viable Product (MVP) and avoid the pitfalls of scope creep, ensuring a successful
+        and manageable initial project.
+    </p>
+
+    <h2>Simplicity and Focus</h2>
+    <p>
+        The game’s mechanics are straightforward: Fluff floats on a balloon, tap to make Fluff drop down
+        (like an upside-down Flappy Bird) and prevent the cat from hitting the ceiling, while also avoiding
+        obstacles. Every 5 points, the game speeds up; collect candy to slow the game speed back down.
+    </p>
+    <p>
+        Focusing on a game with basic mechanics allowed me to concentrate on mastering fundamental aspects of
+        game development, such as coding, design, and pixel art, without getting overwhelmed by complex
+        systems or features.
+    </p>
+
+    <h2>Learning Core Principles</h2>
+    <p>
+        Developing Floaty Fluff helped me grasp essential game development principles, including collision
+        detection, physics, and user input handling. Understanding these core concepts is vital for any game
+        developer, and a small project provides a manageable scope to practice and refine these skills.
+        Moreover, it allowed me to experience the entire game development lifecycle, from initial concept to
+        final polish.
+    </p>
+
+    <h2>Avoiding Scope Creep</h2>
+    <p>
+        Scope creep is a common issue in game development, where additional features and ideas extend beyond
+        the original project scope, leading to delays and unfinished projects. By choosing a small,
+        well-defined project, I minimized the risk of scope creep. I set clear, achievable goals and focused
+        on executing them to the best of my ability. This disciplined approach ensured that I completed my
+        project on time and learned the importance of project management in game development.
+    </p>
+
+    <h2>Game Development — Game Engines</h2>
+    <p>
+        Choosing a game engine, if you are not skilled enough to build your own, is a decision every game
+        developer faces. My decision to switch to the <a href="https://godotengine.org/" target="_blank"
+            rel="noopener">Godot Engine</a>, a
+        free and open-source cross-platform engine, came after encountering significant challenges with
+        publishing my game using Solar 2D (Solar 2D is also open source and cross-platform). Although I had
+        initially developed the entire game in Solar 2D, I found the process of getting the game ready for
+        release cumbersome and frustrating. Godot offered a more streamlined and user-friendly publishing
+        experience, alongside its robust set of tools and active community support. Its flexibility and
+        comprehensive documentation made the transition smoother and allowed me to enhance my game's overall
+        performance.
+    </p>
+
+    <h2>Building Confidence</h2>
+    <p>
+        Completing a project, no matter how small, is a significant confidence booster. Finishing Floaty
+        Fluff and publishing it for Apple and Google Play demonstrated that I could take a game from concept
+        to completion. This success provided me with the motivation and confidence to tackle more complex
+        projects in the future. It is also a portfolio piece that showcases my skills and dedication to
+        potential collaborators.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+        Choosing to develop a small game like Flappy Bird as my first project allowed me to learn and apply
+        fundamental game development principles, avoid scope creep, and build confidence in my abilities.
+        For any aspiring indie game developer, starting with a small, manageable project is a critical step
+        towards achieving long-term success in the industry. By focusing on creating an MVP, you can ensure
+        steady progress and lay a solid foundation for more ambitious projects in the future.
+    </p>
+
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Guy Blue Guy - Blog</title>
@@ -103,4 +286,4 @@
 
 </body>
 
-</html>
+</html> -->

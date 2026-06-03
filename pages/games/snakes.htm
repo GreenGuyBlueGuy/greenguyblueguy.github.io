@@ -10,19 +10,27 @@
 
 <body>
 
-    <nav>
-        <center><img src="/images/GreenGuyBlueGuyLogo.png" alt="Green Guy Blue Guy Logo" style="max-width: 375px;">
-        </center><br>
-        <a href="/home.htm">Home</a>
-        <a href="/pages/games.htm">Games</a>
-        <a href="/pages/aboutUs.htm">About Us</a>
-        <a href="/pages/blog.htm">Blog</a>
-        <a href="/pages/contact.htm">Contact</a>
-    </nav>
-    <div id="content">
+    <div class="page-top">
+        <nav>
+            <div class="gutter-left"></div>
+
+            <a href="/home.htm" class="logo">
+                <img src="/images/GreenGuyBlueGuyLogo.png" alt="Logo">
+            </a>
+
+            <div class="nav-links">
+                <a href="/pages/games.htm">GAMES</a>
+                <a href="/pages/aboutUs.htm">ABOUT</a>
+                <a href="/pages/blog.htm">MANIFESTO</a>
+            </div>
+
+            <div class="gutter-right"></div>
+        </nav>
+    </div>
+    <div id="content" class="page">
         <!-- <br> -->
         <center>
-            <h1>Snakes with Fists!</h1>
+
             <section>
                 <video controls width=80% controls poster="/images/SnakesWithFistsLogo.png">
                     <source class="embedded-video" src="/GameplayTrailer.mp4" type="video/mp4"
@@ -30,14 +38,16 @@
                     Your browser does not support the video tag.
                 </video>
             </section>
-            <img src="/images/Award_Dallas2025_bg.png" width=80% style="padding: 10px 40px 0px 40px;" />
-            <img src="/images/Award_Atlanta2024_bg.png" width=80% style="padding: 10px 40px 0px 40px;" />
+            <img src="/images/Award_Dallas2025_bg.png" width=40% style="padding: 10px 40px 0px 40px;" />
+            <img src="/images/Award_Atlanta2024_bg.png" width=40% style="padding: 10px 40px 0px 40px;" />
         </center>
-        <center>
-            <h2>Wishlist on Steam!</h2>
-            <a href="https://store.steampowered.com/app/3286250/Snakes_with_Fists/" class="join-button">STEAM PAGE</a>
-        </center>
-        <br>
+    </div>
+    <center>
+        <a href="https://store.steampowered.com/app/3286250/Snakes_with_Fists/" class="join-button">STEAM PAGE</a>
+    </center>
+
+    <br>
+    <div id="content" class="page">
         <!-- <hr> -->
         <section>
             <!-- <h2>Snakes with Fists!</h2> -->

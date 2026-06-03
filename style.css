@@ -5,7 +5,8 @@ DESIGN SYSTEM
 :root {
     --bg: #0f1116;
     --panel: #171a21;
-    --panel-2: #1b2838;
+    /* --panel-2: #1b2838; */
+    --panel-2: #000000c9;
     --text: #e6e6e6;
     --muted: #a7b1c2;
 
@@ -37,10 +38,27 @@ body {
     padding: 0;
     font-family: var(--font-main);
     background: var(--bg);
+    background-image: url("/images/CrawlerBG.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+}
+
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: clamp(1rem, 5vw, 3rem);
+}
+
+.page-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: clamp(1rem, 5vw, 3rem);
 }
 
 img {
@@ -59,6 +77,14 @@ a:hover {
     text-decoration: underline;
 }
 
+hr {
+    border: none;
+    height: 3px;
+    background-color: #3498db;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* =========================
 CENTERED PAGE LAYOUT (IMPORTANT)
@@ -97,18 +123,39 @@ header {
     border-bottom: 1px solid #000;
 }
 
+
 nav {
     background: var(--panel-2);
-    text-align: center;
-    /* font-family: var(--font-main); */
     font-family: 'SegaArcadeFont', sans-serif;
-    font-size: 20px;
-    padding: var(--space-2);
+    font-size: 24px;
+
+    display: grid;
+    grid-template-columns:
+        clamp(1rem, 3vw, 5rem) auto 1fr auto clamp(1rem, 3vw, 5rem);
+    align-items: center;
+    padding: 0.5rem var(--space-2);
 }
+
+nav a:first-child {
+    margin-right: auto;
+}
+
+nav img {
+    max-width: 165px;
+    display: block;
+}
+
+/* nav {
+    background: var(--panel-2);
+    text-align: center;
+    font-family: 'SegaArcadeFont', sans-serif;
+    font-size: 24px;
+    padding: var(--space-2);
+} */
 
 nav a {
     display: inline-block;
-    padding: 8px 8px;
+    padding: 6px 6px;
     margin: 0 4px;
     color: var(--text);
     border-radius: var(--radius-sm);
@@ -119,6 +166,20 @@ nav a:hover {
     color: var(--accent);
 }
 
+.logo {
+    justify-self: start;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    justify-self: end;
+}
+
+.logo img {
+    max-width: 165px;
+    display: block;
+}
 
 /* =========================
 STEAM-LIKE CONTENT CARDS
@@ -384,6 +445,46 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 12px;
+}
+
+.site-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 2rem 1rem;
+    background: var(--panel);
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
 }
 
 /* =========================

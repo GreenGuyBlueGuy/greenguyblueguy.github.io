@@ -13,15 +13,23 @@
 
 <body>
 
-    <nav>
-        <center><img src="/images/GreenGuyBlueGuyLogo.png" alt="Green Guy Blue Guy Logo" style="max-width: 400px;">
-        </center><br>
-        <a href="/home.htm">HOME</a>
-        <a href="/pages/games.htm">GAMES</a>
-        <a href="/pages/aboutUs.htm">ABOUT US</a>
-        <a href="/pages/blog.htm">BLOG</a>
-        <a href="/pages/contact.htm">CONTACT</a>
-    </nav>
+    <div class="page-top">
+        <nav>
+            <div class="gutter-left"></div>
+
+            <a href="/home.htm" class="logo">
+                <img src="/images/GreenGuyBlueGuyLogo.png" alt="Logo">
+            </a>
+
+            <div class="nav-links">
+                <a href="/pages/games.htm">GAMES</a>
+                <a href="/pages/aboutUs.htm">ABOUT</a>
+                <a href="/pages/blog.htm">MANIFESTO</a>
+            </div>
+
+            <div class="gutter-right"></div>
+        </nav>
+    </div>
 
     <br>
 
@@ -141,28 +149,33 @@
         </div>
     </div>
 
-    <footer>
+</body>
+<footer class="site-footer">
 
+    <div class="footer-social">
         <a href="https://www.facebook.com/profile.php?id=61557710490914">
-            <img src="/images/fbIcon.png" alt="Facebook Icon" id="icon">
+            <img src="/images/fbIcon.png" alt="Facebook" class="footer-icon">
         </a>
 
         <a href="https://twitter.com/GGBGgames">
-            <img src="/images/X_icon_2.png" alt="Twitter Icon" id="icon">
+            <img src="/images/X_icon_2.png" alt="X" class="footer-icon">
         </a>
 
         <a href="https://www.instagram.com/snakes_with_fists/">
-            <img src="/images/instaicon.png" alt="Instagram Icon" id="icon">
+            <img src="/images/instaicon.png" alt="Instagram" class="footer-icon">
         </a>
+    </div>
 
-        <br>
+    <div class="footer-links">
+        <a href="/home.htm">Home</a>
+        <a href="/pages/contact.htm">Contact</a>
+        <a href="/pages/privacyPolicy.htm">Privacy</a>
+    </div>
 
+    <div class="footer-bottom">
         &copy; 2024 Green Guy Blue Guy. All rights reserved.
-        <a href="/pages/privacyPolicy.htm">Privacy Policy</a>
-
-    </footer>
-
-</body>
+    </div>
+</footer>
 
 </html>
 

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="Green Guy Blue Guy, indie game studio, indie game, indie games, indie dev, solo dev, solo dveloper, pixel art, floaty fluff, snakes with fists, tale of the story legend" />
+    <link rel="icon" type="image/x-icon" href="images/Favicon.png">
+    <title>Green Guy Blue Guy - Play Fun and Creative Games!</title>
+    <script
+        id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/ff8ee06c7aebde3c79943f235/44475d36b4472a8e5a48fe367.js");</script>
+</head>
+
+<body>
+    <nav>
+        <center><img src="/images/GreenGuyBlueGuyLogo.png" alt="Green Guy Blue Guy Logo" style="max-width: 375px;">
+        </center><br>
+        <a href="/home.htm">HOME</a>
+        <a href="/pages/games.htm">GAMES</a>
+        <a href="/pages/aboutUs.htm">ABOUT US</a>
+        <a href="/pages/blog.htm">BLOG</a>
+        <a href="/pages/contact.htm">CONTACT</a>
+
+        <!-- <a href="https://www.facebook.com/profile.php?id=61557710490914"><img src="images/fbIcon.png" alt="Itch Icon"
+                id="icon"></a>
+        <a href="https://twitter.com/GGBGgames"><img src="images/X_icon_2.png" alt="Twitter Icon" id="icon"></a>
+        <a href="https://www.instagram.com/snakes_with_fists/"><img src="images/instaicon.png" alt="Itch Icon"
+                id="icon"></a> -->
+
+    </nav>
+    <br>
+    <div id="content">
+        <div class="carousel-container">
+            <div class="carousel">
+                <!-- <div class="carousel-item">
+                    <img src="/images/welcome.png" alt="GBBG Logo" id="mainImage">
+                </div> -->
+                <div class="carousel-item">
+                    <a href="/pages/games/snakes.htm"><img src="/images/snakesWithFistsNew.png" alt="Snakes with Fists!"
+                            id="mainImage"></a>
+                </div>
+                <div class="carousel-item">
+                    <a href="/pages/games/floatyfluff.htm"><img src="/images/floatyFLuffAppLogo.png" alt="Floaty Fluff"
+                            id="mainImage"></a>
+                </div>
+                <div class="carousel-item">
+                    <a href="/pages/games/taleofthe.htm"><img src="/images/TaleoftheStoryLegend-Logo.png"
+                            alt="Tale of the Story Legend" id="mainImage"></a>
+                </div>
+
+            </div>
+            <center>
+                <button class="carousel-arrow left-arrow">&#9664;</button>
+                <button class="carousel-arrow right-arrow">&#9654;</button>
+            </center>
+        </div>
+        <hr style="border-color: rgb(0, 0, 0);">
+        <br>
+        <center>
+            <h2>Snakes with Fists is on Steam!</h2>
+            <a href="https://store.steampowered.com/app/3286250/Snakes_with_Fists/" class="join-button">steam page</a>
+        </center>
+        <div id="content">
+            <br>
+            <hr style="border-color: rgb(0, 0, 0);">
+            <center><iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/episode/13S4WQEgAldVsUEHQYiUze?utm_source=generator" width="65%"
+                    height="352" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe></center>
+            <hr style="border-color: rgb(0, 0, 0);">
+            <br>
+            <center>
+                <h2>Join the Mailing List!</h2>
+                <a href="/pages/signupform.htm" class="join-button">Join</a>
+            </center>
+            <div id="content">
+                <br>
+                </nav>
+                <center>
+                    <!-- <h1>Green Guy Blue Guy</h1> -->
+                    <hr style="border-color: rgb(0, 0, 0);">
+                    <br>
+                    <h2>PLAY FLOATY FLUFF RIGHT MEOW!</h2>
+                    <img src="/images/FFcandy.png" width="25%" />
+                    <br>
+                    <a href="https://play.google.com/store/apps/details?id=com.floaty.fluff&pcampaignid=web_share"><img
+                            src="/images/google-play-badge.png" width="22%"></a><br>
+                    <a href="https://apps.apple.com/us/app/floaty-fluff/id6479543596 "><img src="/images/Apple.png"
+                            width="22%"></a>
+                </center>
+                <br>
+            </div>
+        </div>
+        <br>
+        <script>
+            const carousel = document.querySelector('.carousel');
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+            let currentIndex = 0;
+            let isSwiping = false;
+            let startX;
+
+            function showImage(index) {
+                const slideWidth = document.querySelector('.carousel-item').offsetWidth;
+                carousel.style.transform = `translateX(${-index * slideWidth}px)`;
+            }
+
+            function moveCarousel() {
+                currentIndex = (currentIndex + 1) % document.querySelectorAll('.carousel-item').length;
+                showImage(currentIndex);
+            }
+
+            // Automatically move the carousel every 3 seconds
+            const autoMove = setInterval(moveCarousel, 3000);
+
+            leftArrow.addEventListener('click', () => {
+                clearInterval(autoMove);
+                currentIndex = (currentIndex - 1 + document.querySelectorAll('.carousel-item').length) % document.querySelectorAll('.carousel-item').length;
+                showImage(currentIndex);
+            });
+
+            rightArrow.addEventListener('click', () => {
+                clearInterval(autoMove);
+                currentIndex = (currentIndex + 1) % document.querySelectorAll('.carousel-item').length;
+                showImage(currentIndex);
+            });
+
+            // Swipe functionality for mobile
+            carousel.addEventListener('touchstart', (e) => {
+                clearInterval(autoMove);
+                startX = e.touches[0].clientX;
+                isSwiping = true;
+            });
+
+            carousel.addEventListener('touchmove', (e) => {
+                if (!isSwiping) return;
+                const touchX = e.touches[0].clientX;
+                const diffX = startX - touchX;
+
+                if (diffX > 50) { // Swiped left
+                    currentIndex = (currentIndex + 1) % document.querySelectorAll('.carousel-item').length;
+                    showImage(currentIndex);
+                    isSwiping = false;
+                } else if (diffX < -50) { // Swiped right
+                    currentIndex = (currentIndex - 1 + document.querySelectorAll('.carousel-item').length) % document.querySelectorAll('.carousel-item').length;
+                    showImage(currentIndex);
+                    isSwiping = false;
+                }
+            });
+
+            carousel.addEventListener('touchend', () => {
+                isSwiping = false;
+            });
+
+
+        </script>
+
+        <!-- <script>
+        // JavaScript code for carousel functionality
+        const carousel = document.querySelector('.carousel');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const slideWidth = document.querySelector('.carousel-item').offsetWidth;
+            carousel.style.transform = `translateX(${-index * slideWidth}px)`;
+        }
+
+        function moveCarousel() {
+            currentIndex = (currentIndex + 1) % document.querySelectorAll('.carousel-item').length;
+            showImage(currentIndex);
+        }
+
+        // Automatically move the carousel every 3 seconds
+        setInterval(moveCarousel, 3000);
+    </script> -->
+</body>
+<footer>
+    <a href="https://www.facebook.com/profile.php?id=61557710490914"><img src="images/fbIcon.png" alt="Itch Icon"
+            id="icon"></a>
+    <a href="https://twitter.com/GGBGgames"><img src="images/X_icon_2.png" alt="Twitter Icon" id="icon"></a>
+    <a href="https://www.instagram.com/snakes_with_fists/"><img src="images/instaicon.png" alt="Itch Icon"
+            id="icon"></a>
+    <br>
+    &copy; 2024 Green Guy Blue Guy. All rights reserved.
+    <a href="/pages/privacyPolicy.htm">Privacy Policy</a>
+</footer>
+
+</html>
