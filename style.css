@@ -79,11 +79,13 @@ a:hover {
 
 hr {
     border: none;
-    height: 3px;
-    background-color: #3498db;
-    width: 50%;
+    height: 1px;
+    background-color: #363636;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* =========================
@@ -136,22 +138,14 @@ nav {
     padding: 0.5rem var(--space-2);
 }
 
-nav a:first-child {
+/* nav a:first-child {
     margin-right: auto;
-}
+} */
 
 nav img {
     max-width: 165px;
     display: block;
 }
-
-/* nav {
-    background: var(--panel-2);
-    text-align: center;
-    font-family: 'SegaArcadeFont', sans-serif;
-    font-size: 24px;
-    padding: var(--space-2);
-} */
 
 nav a {
     display: inline-block;
@@ -176,8 +170,10 @@ nav a:hover {
     justify-self: end;
 }
 
+
+
 .logo img {
-    max-width: 165px;
+    max-width: 155px;
     display: block;
 }
 
