@@ -5,86 +5,67 @@
     <link rel="stylesheet" href="/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/Favicon.png">
     <title>Green Guy Blue Guy - Game - Floaty Fluff</title>
 </head>
 
 <body>
-
-
     <div class="page-top">
-        <nav>
-            <div class="gutter-left"></div>
-
+        <nav class="site-nav">
             <a href="/home.htm" class="logo">
-                <img src="/images/GreenGuyBlueGuyLogo.png" alt="Logo">
+                <img src="/images/GreenGuyBlueGuyLogo.png" alt="Green Guy Blue Guy logo">
             </a>
-
             <div class="nav-links">
+                <a href="/home.htm">HOME</a>
                 <a href="/pages/games.htm">GAMES</a>
                 <a href="/pages/aboutUs.htm">ABOUT</a>
                 <a href="/pages/blog.htm">BLOG</a>
             </div>
-
-            <div class="gutter-right"></div>
         </nav>
     </div>
-    <center>
-        <h1>Floaty Fluff</h1>
-        <div id="content">
-            <section>
-                <br>
-                <!-- <img src="/images/FBprofile.png" width="25%" /> -->
-                <video controls width="300" controls poster="/images/FFscreenshot.png">
-                    <source class="embedded-video" src="/FloatyFluffGameplay.mp4" type="video/mp4"
-                        style="padding: 10px 20px 30px 40px;">
-                    Your browser does not support the video tag.
-                </video>
-                <h1>Play it right meow!</h1>
-                <a href="https://play.google.com/store/apps/details?id=com.floaty.fluff&pcampaignid=web_share"><img
-                        src="/images/google-play-badge.png" width="25%"></a> <br>
-                <a href="https://apps.apple.com/us/app/floaty-fluff/id6479543596 "><img src="/images/Apple.png"
-                        width="25%"></a><br>
-                <h2>Flappy bird, but with a cat and candy.</h2>
-                <!-- <p>A casual one-touch mobile game where players avoid obstacles by tapping the screen.</p>
-                <img src="/images/floatyFluffArticle.png" width="50%" />
 
-                <h2>The Pitch:</h2>
-                <p>Point #1 - People love cats, or they hate them.</p>
-                <p>Point #2 - Balloons are fun (subjective - but generally that is their intent)</p>
-                <p>Currently, there are no ‘cats tied to a balloon’ games.</p>
-                <p>So the market is wide open! </p>
-                <p>We think you can connect the dots, this idea translates into $$$$</p>
-                <h2>The Team:</h2>
-                <p>Green Guy Blue Guy is a family company - literally, not figuratively. We do not say things like “you
-                    are
-                    like family when you
-                    work
-                    here”. We are literally family.</p>
-                <p>
-                    We don’t have a cat. Sorry to say, because I know what you are thinking “hey wow, a cat game, I bet
-                    the
-                    creators have a ton of
-                    cats”. The truth is, we don’t even have ONE cat. We love cats, but some of us are allergic to cats -
-                    and
-                    how do you figure that out? That’s right you've hugged a cat, or pet a cat then rubbed your eyes,
-                    oof.
-                    All of that being said, we do think cats are
-                    pretty swell.</p>
-                <h2>Game Engine:</h2>
-                <p>We made this in Godot. The original concept was made in Solar 2d, which is a great open source engine
-                    for
-                    cross-platform development. We moved to godot because Solar 2d was having some issues (crashing)
-                    after
-                    an
-                    operating system update.</p> -->
-            </section>
+    <main class="page text-center">
+        <h1 class="section-title">Floaty <span>Fluff</span></h1>
+
+        <video class="embedded-video" controls poster="/images/FFscreenshot.png" style="max-width: 360px;">
+            <source src="/FloatyFluffGameplay.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <h2 style="margin-top: 1.5rem;">Play it right meow!</h2>
+        <div class="store-badges">
+            <a href="https://play.google.com/store/apps/details?id=com.floaty.fluff&pcampaignid=web_share">
+                <img src="/images/google-play-badge.png" alt="Get it on Google Play">
+            </a>
+            <a href="https://apps.apple.com/us/app/floaty-fluff/id6479543596">
+                <img src="/images/Apple.png" alt="Download on the App Store">
+            </a>
         </div>
-    </center>
-    <footer>
-        &copy; 2024 Green Guy Blue Guy. All rights reserved.
-        <a href="/pages/privacyPolicy.htm">Privacy Policy</a>
-    </footer>
 
+        <p style="color: var(--muted); max-width: 32rem; margin: 1rem auto;">Flappy bird, but with a cat and candy.</p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61557710490914">
+                <img src="/images/fbIcon.png" alt="Facebook" class="footer-icon">
+            </a>
+            <a href="https://twitter.com/GGBGgames">
+                <img src="/images/X_icon_2.png" alt="X" class="footer-icon">
+            </a>
+            <a href="https://www.instagram.com/snakes_with_fists/">
+                <img src="/images/instaicon.png" alt="Instagram" class="footer-icon">
+            </a>
+        </div>
+        <div class="footer-links">
+            <a href="/home.htm">Home</a>
+            <a href="/pages/contact.htm">Contact</a>
+            <a href="/pages/privacyPolicy.htm">Privacy</a>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024&ndash;2026 Green Guy Blue Guy. All rights reserved.
+        </div>
+    </footer>
 </body>
 
 </html>

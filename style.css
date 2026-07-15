@@ -1,31 +1,50 @@
 /* =========================
-DESIGN SYSTEM
+DESIGN SYSTEM — Pixel-dark indie studio
 ========================= */
 
-:root {
-    --bg: #0f1116;
-    --panel: #171a21;
-    /* --panel-2: #1b2838; */
-    --panel-2: #000000c9;
-    --text: #e6e6e6;
-    --muted: #a7b1c2;
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Press+Start+2P&display=swap');
 
-    --accent: #66c0f4;
-    --accent-hover: #4fa7d4;
+:root {
+    --bg: #0a0c10;
+    --bg-deep: #06080c;
+    --panel: #12151c;
+    --panel-2: rgba(10, 12, 16, 0.92);
+    --panel-border: rgba(102, 192, 244, 0.12);
+    --text: #e8ecf2;
+    --muted: #9aa6b8;
+
+    /* Green Guy / Blue Guy brand */
+    --green: #5cdb6a;
+    --green-dim: #3d9e48;
+    --blue: #4eb8f5;
+    --blue-dim: #2a8fc4;
+    --accent: var(--blue);
+    --accent-hover: #7dcef8;
+    --accent-green: var(--green);
 
     --success: #5c7e10;
+    --success-hover: #6aa10f;
 
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
+    --pixel-border: 3px solid #1e2430;
+    --glow-blue: 0 0 12px rgba(78, 184, 245, 0.25);
+    --glow-green: 0 0 12px rgba(92, 219, 106, 0.2);
+
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 6px;
 
     --space-1: 4px;
     --space-2: 8px;
     --space-3: 12px;
     --space-4: 20px;
     --space-5: 40px;
+    --space-6: 56px;
 
-    --font-main: "IBM Plex Sans", Arial, sans-serif;
+    --font-main: "IBM Plex Sans", system-ui, Arial, sans-serif;
+    --font-display: "Press Start 2P", monospace;
+
+    --max-width: 1100px;
+    --nav-height: auto;
 }
 
 
@@ -33,32 +52,33 @@ DESIGN SYSTEM
 BASE
 ========================= */
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     font-family: var(--font-main);
-    background: var(--bg);
-    background-image: url("/images/CrawlerBG.png");
+    background-color: var(--bg);
+    background-image:
+        linear-gradient(180deg, rgba(10, 12, 16, 0.75) 0%, rgba(10, 12, 16, 0.88) 100%),
+        url("/images/CrawlerBG.png");
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-}
-
-.page {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-inline: clamp(1rem, 5vw, 3rem);
-}
-
-.page-top {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-inline: clamp(1rem, 5vw, 3rem);
 }
 
 img {
@@ -70,6 +90,7 @@ img {
 a {
     color: var(--accent);
     text-decoration: none;
+    transition: color 0.15s ease;
 }
 
 a:hover {
@@ -77,46 +98,100 @@ a:hover {
     text-decoration: underline;
 }
 
+h1, h2, h3, h4 {
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+h1, h2 {
+    font-family: var(--font-display);
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
+    letter-spacing: 0.02em;
+    color: var(--text);
+}
+
+h3 {
+    font-family: var(--font-display);
+    font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+    color: var(--blue);
+}
+
 hr {
     border: none;
-    height: 1px;
-    background-color: #363636;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--green-dim) 20%,
+        var(--blue-dim) 80%,
+        transparent
+    );
+    width: min(90%, 720px);
+    margin: var(--space-5) auto;
+    opacity: 0.7;
 }
+
+/* Legacy center tags still used on some game pages */
+center {
+    display: block;
+    text-align: center;
+}
+
+center img,
+center video {
+    margin-inline: auto;
+}
+
 
 /* =========================
-CENTERED PAGE LAYOUT (IMPORTANT)
+LAYOUT
 ========================= */
 
-.container {
-    max-width: 1100px;
+.page-top {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--panel-2);
+    border-bottom: 2px solid var(--panel-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+}
+
+.page-top > nav,
+.site-nav {
+    max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 var(--space-4);
+    padding: 0.65rem clamp(0.75rem, 4vw, 1.5rem);
 }
 
-/* Steam-style content column wrapper */
 .page {
-    display: flex;
-    justify-content: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-4) clamp(1rem, 5vw, 2rem);
+    width: 100%;
 }
 
-.page-inner {
+.page-inner,
+.container {
     width: 100%;
-    max-width: 1100px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.container {
+    padding: 0 clamp(1rem, 5vw, 2rem);
+}
+
+#content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-4) clamp(1rem, 5vw, 2rem);
 }
 
 
 /* =========================
 HEADER / NAV
 ========================= */
-@font-face {
-    font-family: 'SegaArcadeFont';
-    src: url('SegaArcadeFont-Regular.ttf') format('truetype');
-}
 
 header {
     background: var(--panel);
@@ -125,86 +200,175 @@ header {
     border-bottom: 1px solid #000;
 }
 
-
-nav {
-    background: var(--panel-2);
-    font-family: 'SegaArcadeFont', sans-serif;
-    font-size: 20px;
-
-    display: grid;
-    grid-template-columns:
-        clamp(1rem, 3vw, 5rem) auto 1fr auto clamp(1rem, 3vw, 5rem);
+nav,
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 0.5rem var(--space-2);
+    justify-content: space-between;
+    gap: 0.75rem 1rem;
+    font-family: var(--font-display);
+    font-size: 10px;
+    background: transparent;
 }
 
-/* nav a:first-child {
-    margin-right: auto;
-} */
-
-nav img {
-    max-width: 165px;
-    display: block;
-}
-
-nav a {
-    display: inline-block;
-    padding: 6px 6px;
-    margin: 0 4px;
-    color: var(--text);
-    border-radius: var(--radius-sm);
-}
-
-nav a:hover {
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--accent);
+/* hide decorative gutters if present */
+.gutter-left,
+.gutter-right {
+    display: none;
 }
 
 .logo {
-    justify-self: start;
+    flex-shrink: 0;
+}
+
+.logo img,
+nav img {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: auto;
 }
 
 .nav-links {
     display: flex;
-    gap: 0.5rem;
-    justify-self: end;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.35rem 0.5rem;
 }
 
-
-
-.logo img {
-    max-width: 155px;
-    display: block;
+nav a,
+.nav-links a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 0.7rem;
+    margin: 0;
+    color: var(--text);
+    border-radius: var(--radius-sm);
+    border: 2px solid transparent;
+    text-decoration: none;
+    line-height: 1.2;
+    min-height: 44px;
+    box-sizing: border-box;
 }
+
+nav a:hover,
+.nav-links a:hover {
+    background: rgba(78, 184, 245, 0.1);
+    color: var(--blue);
+    border-color: rgba(78, 184, 245, 0.35);
+    text-decoration: none;
+}
+
+/* Stack links under logo on small screens */
+@media (max-width: 768px) {
+    nav,
+    .site-nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .logo {
+        justify-self: center;
+    }
+
+    .logo img,
+    nav img {
+        max-width: 130px;
+        margin-inline: auto;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+
+    nav a,
+    .nav-links a {
+        font-size: 9px;
+        padding: 0.5rem 0.55rem;
+        min-height: 40px;
+    }
+}
+
+@media (max-width: 400px) {
+    .nav-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.35rem;
+        max-width: 280px;
+        margin-inline: auto;
+    }
+
+    nav a,
+    .nav-links a {
+        justify-content: center;
+    }
+}
+
 
 /* =========================
-STEAM-LIKE CONTENT CARDS
+CARDS / PANELS
 ========================= */
 
 .card,
 .featured-game-container,
 .team-member,
-.roblox-card {
+.roblox-card,
+.blog-post,
+.panel {
     background: var(--panel);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 2px solid var(--panel-border);
     border-radius: var(--radius-md);
     padding: var(--space-4);
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
 }
 
 .card:hover,
 .featured-game-container:hover,
 .team-member:hover,
 .roblox-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    border-color: rgba(78, 184, 245, 0.35);
+    box-shadow: var(--glow-blue), 0 6px 0 rgba(0, 0, 0, 0.4);
     transition: 0.2s ease;
+}
+
+.blog-post {
+    margin-bottom: var(--space-4);
+}
+
+.blog-post h3 {
+    margin: 0 0 0.35rem;
+}
+
+.blog-post h3 a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.blog-post h3 a:hover {
+    color: var(--green);
+}
+
+.blog-post p {
+    margin: 0.2rem 0;
+    color: var(--muted);
+    font-size: 0.95rem;
 }
 
 
 /* =========================
-GRID SYSTEM (STEAM STORE STYLE)
+GRID SYSTEM
 ========================= */
 
 .grid {
@@ -221,7 +385,6 @@ GRID SYSTEM (STEAM STORE STYLE)
 }
 
 @media (max-width: 768px) {
-
     .grid-2,
     .grid-3 {
         grid-template-columns: 1fr;
@@ -230,7 +393,7 @@ GRID SYSTEM (STEAM STORE STYLE)
 
 
 /* =========================
-IMAGES (STEAM STYLE)
+IMAGES
 ========================= */
 
 .img-lg {
@@ -267,6 +430,13 @@ CAROUSEL
     position: relative;
 }
 
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.75rem;
+}
+
 .carousel {
     display: flex;
     transition: transform 0.5s ease;
@@ -279,7 +449,7 @@ CAROUSEL
     align-items: center;
 }
 
-.carousel-arrow {
+.carousel-container .carousel-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -288,96 +458,180 @@ CAROUSEL
     border: none;
     padding: 10px;
     cursor: pointer;
+    z-index: 1;
 }
 
-.left-arrow {
+.carousel-container .left-arrow {
     left: 10px;
 }
 
-.right-arrow {
+.carousel-container .right-arrow {
     right: 10px;
 }
 
 
 /* =========================
-BUTTONS (STEAM STYLE)
+BUTTONS
 ========================= */
 
 button,
-.btn {
+.btn,
+.join-button {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: clamp(10px, 2.5vw, 12px);
+    padding: 14px 22px;
     background: var(--success);
-    color: white;
-    border: none;
-    padding: 10px 16px;
+    color: #fff;
+    border: 2px solid #8bc34a;
     border-radius: var(--radius-sm);
     cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 3px 0 #2d4208;
+    transition: transform 0.1s ease, background 0.15s ease, box-shadow 0.1s ease;
+    line-height: 1.3;
+    text-align: center;
 }
 
 button:hover,
-.btn:hover {
-    background: #6aa10f;
+.btn:hover,
+.join-button:hover {
+    background: var(--success-hover);
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 0 #2d4208;
 }
 
-.join-button {
-    font-family: 'SegaArcadeFont', sans-serif;
-    font-size: 24px;
+button:active,
+.btn:active,
+.join-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #2d4208;
+}
+
+.btn-blue,
+.join-button.btn-blue {
+    background: var(--blue-dim);
+    border-color: var(--blue);
+    box-shadow: 0 3px 0 #145a80;
+}
+
+.btn-blue:hover,
+.join-button.btn-blue:hover {
+    background: var(--blue);
+    box-shadow: 0 4px 0 #145a80;
 }
 
 
 /* =========================
-SECTIONS
+FEATURED GAMES / STUDIO GRID
 ========================= */
-/* @media (max-width: 1024px) {
-    .featured-games-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+
+.section-title {
+    text-align: center;
+    margin: 0 0 var(--space-4);
 }
 
-@media (max-width: 768px) {
-    .featured-games-grid {
-        grid-template-columns: 1fr;
-    } */
-
-@media (max-width: 768px) {
-    .featured-games-grid {
-        grid-template-columns: 1fr;
-    }
+.section-title span {
+    color: var(--green);
 }
 
-.roblox-grid {
+.featured-games-grid,
+.games-strip {
     display: grid;
-    gap: var(--space-4);
-}
-
-.featured-games-grid {
-    display: grid;
-    /* grid-template-columns: repeat(3, 1fr); */
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
     align-items: stretch;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: var(--space-3) 0 var(--space-5);
 }
 
 .featured-game-container {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: rgba(18, 21, 28, 0.95);
+    border-radius: var(--radius-md);
+    overflow: hidden; /* rounds image corners with the card */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    padding: 0;
+    gap: 0;
 }
 
-.featured-game-container:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+/* Older generic card rule also targeted this class — keep hover without extra padding fights */
+.card.featured-game-container {
+    padding: 0;
 }
 
-.featured-game-image img {
+.featured-game-image {
+    background: var(--bg-deep);
+    border-bottom: 2px solid var(--panel-border);
+    /* Let images keep their natural aspect ratio — no forced crop box */
+    overflow: visible;
+    line-height: 0;
+}
+
+.featured-game-image a {
+    display: block;
+    width: 100%;
+}
+
+.featured-game-image img,
+.featured-game-image .main-image {
     width: 100%;
     height: auto;
+    max-width: 100%;
+    object-fit: contain;
     display: block;
+    transition: transform 0.25s ease;
+}
+
+.featured-game-container:hover .featured-game-image img {
+    transform: scale(1.02);
+}
+
+.featured-game-description {
+    padding: var(--space-3) var(--space-4) var(--space-4);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.featured-game-description p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.game-card-title {
+    font-family: var(--font-display);
+    font-size: 0.55rem;
+    color: var(--green);
+    margin: 0 0 0.35rem;
+    line-height: 1.5;
+}
+
+.game-card-link {
+    margin-top: auto;
+    font-family: var(--font-display);
+    font-size: 0.5rem;
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.game-card-link:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.games-strip-cta {
+    text-align: center;
+    margin-top: 0.25rem;
+    margin-bottom: var(--space-4);
 }
 
 .team-grid {
@@ -385,22 +639,166 @@ SECTIONS
 }
 
 .roblox-grid {
+    display: grid;
+    gap: var(--space-4);
     grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .featured-games-grid,
+    .games-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .roblox-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-games-grid,
+    .games-strip,
+    .roblox-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 
 /* =========================
-FORMS (STEAM CLEAN UI)
+HERO / MEDIA
+========================= */
+
+.text-center {
+    text-align: center;
+}
+
+.text-center img,
+.text-center video,
+.text-center iframe {
+    margin-inline: auto;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 1000px;
+    margin: var(--space-4) auto var(--space-3);
+    border: 2px solid var(--panel-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--glow-blue);
+}
+
+.embedded-video,
+video.embedded-video,
+.page video,
+#content video,
+main video {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: var(--radius-md);
+    border: 2px solid var(--panel-border);
+    display: block;
+    margin-inline: auto;
+}
+
+/* Fluid embeds (Spotify, Google Forms, etc.) */
+.embed-wrap,
+.responsive-embed {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    margin: var(--space-4) auto;
+}
+
+.embed-wrap iframe,
+.responsive-embed iframe,
+.page iframe,
+main iframe,
+#content iframe {
+    width: 100% !important;
+    max-width: 100%;
+    border: 0;
+    border-radius: var(--radius-md);
+}
+
+.spotify-embed {
+    max-width: 720px;
+    margin: var(--space-3) auto;
+    min-height: 152px;
+}
+
+.contact-iframe {
+    width: 100%;
+    max-width: 640px;
+    min-height: 720px;
+    height: 75vh;
+    border: 2px solid var(--panel-border);
+    border-radius: var(--radius-md);
+    background: var(--panel);
+}
+
+.store-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: var(--space-4) 0;
+}
+
+.store-badges img {
+    max-width: 180px;
+    width: 45vw;
+    height: auto;
+}
+
+.awards-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: var(--space-4) 0;
+}
+
+.awards-row img {
+    width: min(40%, 280px);
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .awards-row img {
+        width: 80%;
+    }
+
+    .store-badges img {
+        width: min(70vw, 200px);
+    }
+}
+
+
+/* =========================
+FORMS
 ========================= */
 
 input,
 textarea {
     width: 100%;
-    padding: 10px;
+    padding: 10px 12px;
     border-radius: var(--radius-sm);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.12);
     background: #0d0f14;
     color: var(--text);
+    font-family: var(--font-main);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: var(--glow-blue);
 }
 
 label {
@@ -415,7 +813,40 @@ label {
     padding: var(--space-4);
     background: var(--panel);
     border-radius: var(--radius-md);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 2px solid var(--panel-border);
+}
+
+/* Newsletter panel */
+#newsletter {
+    max-width: 560px;
+    margin: var(--space-5) auto;
+    padding: var(--space-4);
+    background: var(--panel);
+    border: 2px solid var(--panel-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
+}
+
+#newsletter h2 {
+    text-align: center;
+    margin-top: 0;
+    color: var(--green);
+}
+
+#mc_embed_signup {
+    background: transparent !important;
+    color: var(--text) !important;
+}
+
+#mc_embed_signup form {
+    margin: 0 !important;
+}
+
+#mc_embed_signup .button {
+    background: var(--success) !important;
+    border: 2px solid #8bc34a !important;
+    font-family: var(--font-display) !important;
+    font-size: 10px !important;
 }
 
 
@@ -423,35 +854,17 @@ label {
 FOOTER
 ========================= */
 
-/* footer {
-    background: var(--panel);
-    text-align: center;
-    padding: var(--space-4);
-    margin-top: var(--space-5);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-} */
-
-footer {
-    background: var(--panel);
-    margin-top: var(--space-5);
-    padding: var(--space-4);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-
+footer,
 .site-footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-
+    margin-top: var(--space-6);
     padding: 2rem 1rem;
-    background: var(--panel);
+    background: var(--bg-deep);
     text-align: center;
+    border-top: 2px solid var(--panel-border);
 }
 
 .footer-links {
@@ -464,6 +877,11 @@ footer {
 .footer-links a {
     color: var(--text);
     text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.35rem 0.5rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .footer-links a:hover {
@@ -473,6 +891,7 @@ footer {
 .footer-icon {
     width: 28px;
     height: 28px;
+    transition: transform 0.15s ease, filter 0.15s ease;
 }
 
 .footer-social {
@@ -480,16 +899,105 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-
 }
+
+.footer-social a {
+    display: inline-flex;
+    padding: 0.35rem;
+    min-height: 44px;
+    min-width: 44px;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social a:hover .footer-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 6px rgba(78, 184, 245, 0.6));
+}
+
+.footer-bottom {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+ABOUT / PROSE
+========================= */
+
+.prose-panel {
+    background: var(--panel);
+    border: 2px solid var(--panel-border);
+    border-radius: var(--radius-md);
+    padding: clamp(1.25rem, 4vw, 2rem);
+    max-width: 720px;
+    margin: var(--space-4) auto;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
+}
+
+.prose-panel h2 {
+    margin-top: 0;
+    color: var(--green);
+}
+
+.prose-panel p {
+    color: var(--text);
+}
+
+/* Blog article body (posts that use site shell) */
+.article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: var(--space-4) clamp(1rem, 4vw, 1.5rem) var(--space-5);
+}
+
+.article-body h1,
+.article-body h2,
+.article-body h3 {
+    font-family: var(--font-main);
+    letter-spacing: normal;
+    color: var(--text);
+}
+
+.article-body h1 {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    color: var(--green);
+}
+
+.article-body h2 {
+    font-size: clamp(1.15rem, 3vw, 1.4rem);
+    color: var(--blue);
+    margin-top: 1.75rem;
+}
+
+.article-body h3 {
+    font-size: 1.05rem;
+    color: var(--accent-hover);
+}
+
+.article-body .meta {
+    color: var(--muted);
+    font-size: 0.9em;
+    margin-bottom: 2em;
+}
+
+.article-body blockquote {
+    border-left: 4px solid var(--blue);
+    padding-left: 15px;
+    color: #d6d5d5;
+    margin-left: 0;
+}
+
+.article-body ul,
+.article-body ol {
+    padding-left: 1.25rem;
+    color: var(--text);
+}
+
 
 /* =========================
 UTILITIES
 ========================= */
-
-.text-center {
-    text-align: center;
-}
 
 .mt-4 {
     margin-top: var(--space-4);
@@ -497,4 +1005,32 @@ UTILITIES
 
 .mb-4 {
     margin-bottom: var(--space-4);
+}
+
+.cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: var(--space-4) 0;
+}
+
+/* Soft scanline-ish overlay optional via class on body sections */
+.pixel-panel {
+    position: relative;
+    background: var(--panel);
+    border: 2px solid var(--panel-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+}
+
+/* Interview / secondary section spacing */
+.interview-section h3 {
+    max-width: 40rem;
+    margin-inline: auto;
+    line-height: 1.6;
+    color: var(--text);
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    font-weight: 600;
 }
