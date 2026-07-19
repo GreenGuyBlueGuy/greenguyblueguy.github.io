@@ -849,9 +849,9 @@ main video {
 
 .embed-wrap iframe,
 .responsive-embed iframe,
-.page iframe,
-main iframe,
-#content iframe {
+.page iframe:not(.steam-widget-iframe),
+main iframe:not(.steam-widget-iframe),
+#content iframe:not(.steam-widget-iframe) {
     width: 100% !important;
     max-width: 100%;
     border: 0;
@@ -1104,6 +1104,11 @@ main iframe,
 }
 
 /* Steam / itch store widgets */
+/*
+ * Steam store widget is a fixed 646×190 layout.
+ * On narrow screens we scale the FULL card (including Wishlist)
+ * to the container width — shrinking iframe height caused inner scroll.
+ */
 .widget-wrap {
     width: 100%;
     max-width: 646px;
@@ -1114,23 +1119,91 @@ main iframe,
     background: var(--panel);
     line-height: 0;
     box-sizing: border-box;
+    position: relative;
+    /* Keeps box height proportional to Steam's 646×190 card */
+    aspect-ratio: 646 / 190;
+    height: auto;
+    container-type: inline-size;
 }
 
-.widget-wrap iframe {
+.widget-wrap iframe,
+.widget-wrap .steam-widget-iframe {
     display: block;
-    width: 100% !important;
-    max-width: 100%;
-    height: 190px;
-    min-height: 190px;
     border: 0;
+    border-radius: 0;
+    /* Native Steam size, then scale down to fit container */
+    width: 646px !important;
+    max-width: none !important;
+    height: 190px !important;
+    min-height: 190px !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+    /* 100cqw = width of .widget-wrap */
+    transform: scale(calc(100cqw / 646));
+}
+
+/* Fallback if cqw unsupported: stretch iframe (may letterbox slightly) */
+@supports not (width: 1cqw) {
+    .widget-wrap iframe,
+    .widget-wrap .steam-widget-iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        inset: 0;
+        transform: none;
+    }
+}
+
+/* Mobile: direct Steam link under card (reliable tap target) */
+.steam-mobile-fallback {
+    display: none;
+    text-align: center;
+    margin: 0.75rem auto 0;
+    max-width: 646px;
+}
+
+.steam-mobile-fallback a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: 0.75rem 1.25rem;
+    font-family: var(--font-display);
+    font-size: 0.55rem;
+    line-height: 1.4;
+    color: #fff;
+    text-decoration: none;
+    background: #1b2838;
+    border: 2px solid #66c0f4;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 3px 0 #0e151d;
+}
+
+.steam-mobile-fallback a:hover {
+    color: #fff;
+    background: #2a475e;
+    text-decoration: none;
 }
 
 .itch-widget-wrap {
     max-width: 552px;
+    aspect-ratio: auto;
+    height: auto;
+    min-height: 167px;
+    container-type: normal;
 }
 
 .itch-widget-wrap iframe {
-    min-height: 167px;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 167px !important;
+    min-height: 167px !important;
+    transform: none !important;
 }
 
 /* Awards / press strip */
@@ -2243,13 +2316,14 @@ MOBILE OPTIMIZATION
 
     .widget-wrap {
         margin-top: var(--space-3);
-        margin-bottom: var(--space-3);
+        margin-bottom: var(--space-2);
         max-width: 100%;
+        /* height comes from container-query scale of full 646×190 card */
     }
 
-    .widget-wrap iframe {
-        min-height: 170px;
-        height: 170px;
+    .steam-mobile-fallback {
+        display: block;
+        padding-inline: 0.5rem;
     }
 
     .awards-row {
@@ -2451,11 +2525,6 @@ MOBILE OPTIMIZATION
 
     .home-cast-card img {
         max-width: 108px;
-    }
-
-    .widget-wrap iframe {
-        min-height: 160px;
-        height: 160px;
     }
 
     .awards-row img {
